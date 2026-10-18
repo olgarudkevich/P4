@@ -1,1 +1,33 @@
+#include <iostream>
+#include <stack>
 
+using namespace std;
+
+int main() {
+    stack<int> S;
+    int target = 45;
+    bool found = false;
+
+    S.push(15);
+    S.push(30);
+    S.push(45);
+    S.push(60);
+    S.push(75);
+    S.push(90);
+
+    while (!S.empty()) {
+        if (S.top() == target) {
+            found = true;
+            break;
+        }
+        S.pop();
+    }
+
+    if (found) {
+        cout << "Шукане число " << target << " знайдено." << endl;
+    } else {
+        cout << "Шукане число " << target << " не знайдено." << endl;
+    }
+
+    return 0;
+}
