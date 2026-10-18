@@ -1,1 +1,27 @@
+#include <iostream>
+#include <stack>
+#include <string>
 
+using namespace std;
+
+int main() {
+    stack<string> S;
+    int count = 0;
+
+    S.push("London");
+    S.push("Paris");
+    S.push("Berlin");
+
+    stack<string> tempStack = S;
+
+    while (!tempStack.empty()) {
+        string str = tempStack.top();
+        count += str.length();
+        cout << str << endl;
+        tempStack.pop();
+    }
+
+    cout << count << endl;
+
+    return 0;
+}
